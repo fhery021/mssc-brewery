@@ -10,6 +10,7 @@ import java.util.UUID;
  */
 @Service
 public class CustomerServiceImpl implements CustomerService {
+
     @Override
     public CustomerDto getCustomerById(UUID customerId) {
         return CustomerDto.builder()
@@ -17,4 +18,23 @@ public class CustomerServiceImpl implements CustomerService {
                 .name("Joe Buck")
                 .build();
     }
+
+    @Override
+    public CustomerDto saveNewCustomer(CustomerDto customerDto) {
+        return CustomerDto.builder()
+                .id(UUID.randomUUID())
+                .build();
+    }
+
+    @Override
+    public void updateCustomer(UUID customerId, CustomerDto customerDto) {
+        // todo when we will have repository
+    }
+
+    @Override
+    public void deleteCustomer(UUID customerId) {
+        // todo when we will have repository
+    }
+
+
 }
