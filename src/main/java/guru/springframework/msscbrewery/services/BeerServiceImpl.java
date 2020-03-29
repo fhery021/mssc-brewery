@@ -22,6 +22,7 @@ public class BeerServiceImpl implements BeerService {
 
     @Override
     public BeerDto saveNewBeer(BeerDto beerDto) {
+        log.info("saving beer");
         return BeerDto.builder()
                 .id(UUID.randomUUID())
                 .build();
@@ -29,11 +30,12 @@ public class BeerServiceImpl implements BeerService {
 
     @Override
     public void updateBeer(UUID beerId, BeerDto beerDto) {
+        log.info("updating beer");
         //todo impl - would add a real impl to update beer
     }
 
     @Override
     public void deleteById(UUID beerId) {
-        log.debug("Deleting a beer...");
+        log.info("deleting beer");
     }
 }
