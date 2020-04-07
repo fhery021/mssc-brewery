@@ -61,7 +61,7 @@ public class BeerControllerTest {
     public void handlePost() throws Exception {
         //given
         BeerDto beerDto = validBeer;
-        beerDto.setId(null);
+//        beerDto.setId(null);
         BeerDto savedDto = BeerDto.builder().id(UUID.randomUUID()).beerName("New Beer").build();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
