@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -29,6 +30,11 @@ public class BeerController {
     public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerId){
 
         return new ResponseEntity<>(beerService.getBeerById(beerId), HttpStatus.OK);
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<BeerDto>> listBeers() {
+        return new ResponseEntity<>(beerService.findAll(), HttpStatus.OK);
     }
 
     @PostMapping
